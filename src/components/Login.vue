@@ -14,8 +14,10 @@
   </template>
   
   <script>
+  import axios from 'axios';
+  
   export default {
-    name: 'LoginForm', // Update the component name to "LoginForm"
+    name: 'LoginForm',
     data() {
       return {
         username: '',
@@ -24,8 +26,21 @@
     },
     methods: {
       login() {
-        // Implement login functionality here
         // Make API request to the backend for authentication
+        axios.post('/login', {
+          username: this.username,
+          password: this.password
+        })
+          .then(response => {
+            // Handle successful login response
+            console.log(response.data.message);
+            // You can perform additional actions, such as redirecting the user
+          })
+          .catch(error => {
+            // Handle error response
+            console.error(error.response.data.message);
+            // You can display an error message to the user
+          });
       }
     }
   };
