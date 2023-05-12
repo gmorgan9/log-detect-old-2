@@ -1,25 +1,30 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import Router from 'vue-router';
 
-// Import your components for different routes
-import Home from './components/Login.vue';
-import Dashboard from './components/Dashboard.vue';
+// Import your components
+import Login from './components/Login.vue';
+import DashboardPage from './components/Dashboard.vue';
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-const routes = [
-  {
-    path: '/',
-    component: Home
-  },
-  {
-    path: '/dashboard',
-    component: Dashboard
-  }
-];
-
-const router = new VueRouter({
-  routes
+export default new Router({
+  routes: [
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: DashboardPage
+    }
+  ]
 });
 
-export default router;
+
+// const router = new VueRouter({
+//   routes
+// });
+
+// export default router;
