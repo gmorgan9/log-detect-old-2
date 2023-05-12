@@ -25,12 +25,11 @@
       };
     },
     methods: {
-      login() {
-        // Make API request to the backend for authentication
-        axios.post('/login', {
-          username: this.username,
-          password: this.password
-        })
+  login() {
+    axios.post('http://192.168.1.183:5000/login', {
+      username: this.username,
+      password: this.password
+    })
           .then(response => {
             // Handle successful login response
             console.log(response.data.message);
