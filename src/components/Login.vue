@@ -15,6 +15,7 @@
   
   <script>
   import axios from 'axios';
+  import { router } from '../router.js';
   
   export default {
     name: 'LoginForm',
@@ -30,22 +31,23 @@
       username: this.username,
       password: this.password
     })
-          .then(response => {
-            // Handle successful login response
-            console.log(response.data.message);
-            // You can perform additional actions, such as redirecting the user
-          })
-          .catch(error => {
-            if (error.response && error.response.data) {
-                // handle error with response data
-                console.error(error.response.data.message);
-            } else {
-                // handle generic error
-                console.error('An error occurred:', error.message);
-            }
-        });
-      }
-    }
+      .then(response => {
+        // Handle successful login response
+        console.log(response.data.message);
+        // Redirect the user to a different route
+        router.push('/dashboard'); // Replace '/dashboard' with your desired route
+      })
+      .catch(error => {
+        if (error.response && error.response.data) {
+          // handle error with response data
+          console.error(error.response.data.message);
+        } else {
+          // handle generic error
+          console.error('An error occurred:', error.message);
+        }
+      });
+  }
+}
   };
   </script>
   
