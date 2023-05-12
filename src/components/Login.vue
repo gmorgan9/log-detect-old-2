@@ -36,10 +36,14 @@
             // You can perform additional actions, such as redirecting the user
           })
           .catch(error => {
-            // Handle error response
-            console.error(error.response.data.message);
-            // You can display an error message to the user
-          });
+            if (error.response && error.response.data) {
+                // handle error with response data
+                console.error(error.response.data.message);
+            } else {
+                // handle generic error
+                console.error('An error occurred:', error.message);
+            }
+        });
       }
     }
   };
