@@ -7,6 +7,7 @@
   </template>
   
   <script>
+  
   export default {
     name: 'DashboardPage' // Update the component name to "DashboardPage"
   };
