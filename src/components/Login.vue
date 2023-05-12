@@ -29,14 +29,12 @@
     },
     methods: {
   login() {
-    axios.post('http://192.168.1.183:5000/login', {
+    axios.post('192.168.1.183:5000/login', {
       username: this.username,
       password: this.password
     })
       .then(response => {
-        // Handle successful login response
         console.log(response.data.message);
-        // Redirect the user to a different route
         router.push('/dashboard'); // Replace '/dashboard' with your desired route
       })
       .catch(error => {
