@@ -1,30 +1,23 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-
-// Import your components
+import { createRouter, createWebHistory } from 'vue-router';
 import Login from './components/Login.vue';
 import DashboardPage from './components/Dashboard.vue';
 
-Vue.use(Router);
+const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: DashboardPage
+  }
+];
 
-export default new Router({
-  routes: [
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: DashboardPage
-    }
-  ]
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 });
 
-
-// const router = new VueRouter({
-//   routes
-// });
-
-// export default router;
+export default router;
