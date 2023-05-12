@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 // Import your components for different routes
-import Home from './components/Home.vue';
+import Home from './components/Login.vue';
 import Dashboard from './components/Dashboard.vue';
 
 Vue.use(VueRouter);
