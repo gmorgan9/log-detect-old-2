@@ -5,15 +5,14 @@
   </div>
 </template>
 
-
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import LoginForm from './components/Login.vue' // Import the LoginForm component
 
 export default {
   name: 'App',
-  // components: {
-  //   LoginForm
-  // }
+  components: {
+    LoginForm // Register the LoginForm component
+  }
 }
 </script>
 
