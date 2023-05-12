@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import LoginForm from './components/Login.vue' // Import the LoginForm component
+import LoginPage from './components/LoginPage.vue' // Import the LoginForm component
 
 export default {
   name: 'App',
   components: {
-    LoginForm // Register the LoginForm component
+    LoginPage // Register the LoginForm component
   }
 }
 </script>

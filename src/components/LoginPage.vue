@@ -20,7 +20,7 @@
 
   
   export default {
-    name: 'LoginForm',
+    name: 'LoginPage',
     data() {
       return {
         username: '',
