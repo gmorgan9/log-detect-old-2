@@ -28,26 +28,26 @@
       };
     },
     methods: {
-  login() {
-    axios.post('192.168.1.183:5000/login', {
-      username: this.username,
-      password: this.password
+      login() {
+  axios.post('http://192.168.1.183:5000/login', { // Update the URL with the protocol and complete path
+    username: this.username,
+    password: this.password
+  })
+    .then(response => {
+      console.log(response.data.message);
+      router.push('/dashboard'); // Replace '/dashboard' with your desired route
     })
-      .then(response => {
-        console.log(response.data.message);
-        router.push('/dashboard'); // Replace '/dashboard' with your desired route
-      })
-      .catch(error => {
-        if (error.response && error.response.data) {
-          // handle error with response data
-          console.error(error.response.data.message);
-        } else {
-          // handle generic error
-          console.error('An error occurred:', error.message);
-        }
-      });
-  }
+    .catch(error => {
+      if (error.response && error.response.data) {
+        // handle error with response data
+        console.error(error.response.data.message);
+      } else {
+        // handle generic error
+        console.error('An error occurred:', error.message);
+      }
+    });
 }
+    }
   };
   </script>
   
