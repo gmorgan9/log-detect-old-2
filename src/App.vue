@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <LoginForm/> <!-- Add this line to use the LoginForm component -->
+    <LoginPage/> <!-- Add this line to use the LoginForm component -->
   </div>
 </template>
 
